@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bulma.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/edde6265f2.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Monoton&family=Scheherazade:wght@700&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body class="columns is-multiline">
+<main class="column is-12"  >
+     
+        <div class="columns">
+        <section class="column  is-12">
+        <form class=" column is-12-mobile container is-desktop">
+          <div class="field">
+
+
+            <label class="label"id="lacodigo" for="código">Código </label>
+          
+            <div class="control">
+              <span id="span1">
+                <input class="input is-success" class="codigo" id="textoCodigo"type="tel" id="código" placeholder="Solo números" maxlength="6" pattern="[0-9]{6}" title="Debes ingresar 6 números" required>
+                <br></br>
+                <button type="submit" id=validar value="Validar" class="buttonValidar">Validar</button>
+              </span>
+            </div>
+          </div>
+
+        
+          <div class="field">
+            <label class="label"for="nombre">Nombre </label>
+            <div class="control ">
+                <input class="input is-success"type="text" class="Nombre" id="textoNombre" placeholder="Solo letras y números" pattern="[a-zA-Z0-9]{2,100}" title="Debes ingresar solo letras y números" required>
+          </div>  
+
+
+          <label class="label" for="categoría">Categoría </label>
+            <div class="control">
+              <div class="select  is-success">
+                <select  class="categoria" id="selectCategoria"></select>
+                </select>
+              
+
+              </div>
+             
+          </div>
+
+          <label class="label"for="ruc">RUC Proveedor </label>
+            <div class="control">
+              <input class="input is-success"type="tel" class="ruc"id="textoRuc" placeholder="Solo números" pattern="[0-9]{11}" maxlength="11" title="Debes ingresar 11 números" required>
+            </div>
+          
+
+          <div class="field">
+            <label class="label"for="nombre">Proveedor </label>
+            <div class="control ">
+              <input class="input is-success"type="text" class="textoProveedor" id="textoProveedor" placeholder="Solo letras y números" pattern="[a-zA-Z0-9]{2,100}" title="Debes ingresar solo letras y números" required>
+            </div>  
+          </div>
+   
+          <label class="label"for="precio">Precio*</label>
+            <div class="control " >
+              <input class="input is-success" type="number"class="precio" id="textoPrecio" step="0.01" title="Solo números decimales con 2 dígitos" required>
+            </div>
+          <label class="label"for="fecha">Fecha </label>
+          <input class="input is-success"type="date" class="fecha"id="textoFecha" required>
+
+
+          <div class="control">
+            <label class="label">Estado:</label>
+            <label class="radio" id="radio">
+              <input type="radio" class="activo"id="radioActivo"value="Activo" name="question" required>
+              Activo
+            </label>
+            <label class="radio">
+              <input type="radio" class="suspendido" id="radioSuspendido"value="Suspendido" name="question" required>
+              Suspendido
+            </label>
+            <label class="radio ">
+              <input type="radio" class="baja" id="radioBaja" value="Baja"name="question" required>
+              De baja
+            </label>
+          </div>
+
+
+        <label class="label">Afecto a impuesto:  </label>
+          <div class="control">
+            <label class="checkbox">
+              <input type="checkbox" class="acepto" id="checkboxAcepto" >
+              Acepto
+            </label>
+          </div>
+       
+
+        <label class="label">Descripción: </label>
+          <div class="control">
+            <textarea class="textarea is-success" placeholder="escribe fast o te decuento" class="descripción"id="textoDescripcion"></textarea>
+            </div>
+            <br></br>
+
+            <button class="button is-white" id="botonGrabar">Grabar</button>
+            <button class="button is-white" id="botonLimpiar">Limpiar</button>
+           
+          </div>
+          
+
+         </section>
+         </div>
+    </main>
+    <script src="./js/index.js"></script>
+    
+  </body>   
+  </html>

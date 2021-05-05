@@ -1,0 +1,212 @@
+*
+{
+    
+}
+header
+{
+   background: rgb(16, 143, 101);
+    text-align: center;
+    align-self: center;
+    font-size: 4vh;
+    height: 92px;
+    font-weight: bold;
+    font-style: oblique;
+    
+    
+}
+/*
+header h1
+{
+    font-family: 'Monoton', cursive;
+  
+    justify-content: center;
+    margin-top: 25px;
+    display:flex;
+}*/
+b {
+    box-sizing: content-box;
+    margin-top: 16px;
+    margin-bottom: 10px;
+    padding: 0px;
+position: relative;
+overflow: hidden;
+display: inline-block;
+text-decoration: none;
+color: #333;
+}
+b:before,
+b:after {
+content: "";
+position: absolute;
+top: 0;
+left: -100%;
+width: 100%;
+height: 2px;
+background: #333;
+transition: left .8s;
+}
+b:hover:before {
+left: 0;
+}
+b:after {
+top: auto;
+bottom: 0;
+left: auto;
+right: -100%;
+background: #333;
+transition: right .8s;
+}
+b:hover:after {
+right: 0;
+}
+nav
+{
+    background: gray;
+}
+
+
+ul
+{
+
+}
+li{
+    list-style-type: none;
+    
+}
+nav .column.is-12-mobile.is-2-desktop button:hover
+{
+  background-color: rgba(139, 139, 139, 0.863);
+
+  color: white;
+   
+}
+main section
+{
+  
+    
+}
+main form
+{
+opacity: 80%;
+}
+nav .column.is-12-mobile.is-2-desktop button
+{
+   
+    background:white;
+    color: black;
+    height: 100%    ;
+    width: 100%;
+    border: white solid 1px;
+    justify-content: left;
+}
+main
+{
+    background-color: rgb(54, 212, 54);
+}
+
+section
+{
+   
+}
+nav .column.is-12-mobile.is-2-desktop
+{
+   flex: auto;
+   padding: 2px;
+   border-radius: 50px;
+   margin-top: 1px;
+   height: 60px;
+   align-content: center;
+}
+
+nav .column.is-12-mobile.is-2-desktop li
+{
+    width: 100%;
+}
+nav .container.is-12-mobile.column.is-8-desktop li i
+{
+    width: 30px;
+    box-sizing: border-box;
+    text-align: center;
+    margin-right: 2px;
+}
+nav .column.is-full-mobile.is-2-desktop
+{
+   flex: auto;
+   padding: 2px;
+   border-radius: 50px;
+   margin-top: 1px;
+   height: 60px;
+   align-content: center;
+}
+nav .column.is-12-mobile.is-2-desktop
+{
+   flex: auto;
+   padding: 2px;
+   
+   align-content: center;
+}
+
+nav .column.is-4
+{   flex: auto;
+    border-radius: 5px;
+    margin: 2px;
+    background: white;
+   text-align: center;
+   min-width: 100px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   
+}
+.fas.fa-images
+{
+box-sizing: border-box;
+width: 30px;
+margin-right: 5px;
+}
+nav .column.is-4 input
+{
+ min-width: 30px;
+ border-radius: 10px ;
+
+ 
+}
+nav .column.is-4 label
+{
+margin: 5px;
+}
+section
+{
+    background: white;
+}
+footer
+{
+    background: rgb(16, 143, 101);
+}
+footer.column.is-12
+{
+    text-align: center;
+    justify-content:center;
+}
+main input:required:focus:valid {
+    background: url("https://assets.digitalocean.com/labs/icons/hand-thumbs-up.svg") no-repeat 95% 50% #e3ffaa;
+    background-size: 18px;
+    border-color: green;
+  }
+  
+  main input:required:focus:invalid {
+    background: url("https://assets.digitalocean.com/labs/icons/exclamation-triangle-fill.svg") no-repeat 95% 50% #ffaea6;
+    background-size: 18px;
+    border-color: #c9b612;
+  }
+   .button.is-white:hover
+  {
+    background-color: rgb(126, 226, 147);
+    color: rgb(255, 255, 255);
+  }
+  iframe
+  {
+      width: 100vw;
+      height: 95vh;
+  }
+  
