@@ -42,11 +42,6 @@ const agregarproducto=(event)=>
     let proveedor=textProveedor.value
     let precio=textPrecio.value;
     let fecha=textFecha.value
-    let radActivo=radioActivo.value
-    let radSuspendido=radioSuspendido.value
-    let radBaja=radioBaja.value
-    let chkAcepto= checkboxAcepto.value
-    
 
     let producto={"codigo":codigo,"nombre":nombre,"descripcion":descripcion,"ruc":ruc,"proveedor":proveedor,"precio":precio,"fechaIngreso":fecha,"categoria":categoria,"esActivo":true}
     

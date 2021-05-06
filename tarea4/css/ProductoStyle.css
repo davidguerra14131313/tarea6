@@ -1,0 +1,59 @@
+ #divselectCategoria {
+    
+    display: inline-block;  margin-bottom:25px;
+   
+}
+#selectCategoria
+{
+    display: inline-block;
+    width: auto;
+ 
+ 
+}
+#labelcategoria
+{
+    display: inline-block;
+  
+}
+fieldset
+{
+    border:solid 1px #3abb67
+    ;
+    padding: 50px;
+    
+}
+#nombreProducto
+{
+    display: inline-block;
+}
+label
+{
+    margin: 2%;
+}
+#textoNombreProducto
+{    margin-top: 25px;
+    width: 40%;
+  
+    display: inline-block;
+}
+
+#textobuscar
+{
+    width: 10vw;
+    margin-left: 15px;
+    margin-top: 25px;
+}
+#selectcategoria2
+{display: inline-block;
+    margin-bottom: 25px;
+}
+#botonbuscar
+{
+margin-top: 25px;
+width: 10%;
+margin-left: 15px;
+}
+#botoneditar
+{
+margin-top: 5px ;
+}

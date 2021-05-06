@@ -1,1 +1,77 @@
-<h1>ssss</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/bulma.css">
+    <link rel="stylesheet" href="./css/ProductoStyle.css">
+    <script src="https://kit.fontawesome.com/edde6265f2.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Monoton&family=Scheherazade:wght@700&display=swap" rel="stylesheet">
+    
+    <title>Document</title>
+</head>
+
+<body class="columns is-multiline">
+    <main class="column is-12">
+
+
+        <div class="columns">
+
+          
+            <section class="column is-12">
+                <form class="column is-12-mobile container is-desktop">
+                   
+                   <div class="field">
+
+                   
+                    <fieldset class="column is-12">
+                        <legend>Filtros</legend>
+                     
+                        <label class="label" for="categoría" id="labelcategoria">Categoría :</label> 
+                        <div class="control"id="divselectCategoria">
+                            <div class="select  is-success " id="selectcategoria2" >
+                                <select  class="categoria" id="selectcategoria">
+                                   <option value="">Todos</option>
+                                </select>
+                                
+                            </div>
+                        
+                        </div>
+                        <label class="label" for="nombreProducto" id="nombreProducto">Nombre Productos :</label>
+                        <input class="input is-success"type="text" class="ruc"id="textoNombreProducto" placeholder="Solo letras y números" pattern="[a-zA-Z\s]"  title="Debes ingresar letras o numeros" required>
+                        <button  class="button is-primary"id="botonbuscar">buscar</button>
+                    </fieldset>
+
+
+                        <table class=" table is-fullwidth">
+                            <thead>
+                              <tr>
+                                <th><abbr >N°</abbr></th>
+                                <th><abbr >Id</abbr></th>
+                                <th><abbr >Codigo</abbr></th>
+                                <th><abbr >Producto</abbr></th>
+                                <th><abbr >Categoria</abbr></th>
+                                <th><abbr >Precio</abbr></th>
+                                <th><abbr >Proveedor</abbr></th>
+                                <th><abbr >Acción</abbr></th>
+                              </tr>
+                            </thead>
+                            
+                            <tbody id="contenidoTabla">
+                                
+                            </tbody>
+                        </table>
+                      
+                            
+                    </div>
+                </form>
+            </section>
+        </div>
+    </main>
+    <script src="./js/ListaProductos.js"></script>
+</body>
+
+
+</html>
