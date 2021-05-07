@@ -22,16 +22,8 @@ const mostrarCategoria=(event)=>
         });
 }
 
-const buscarProducto=(event)=>
-{   event.preventDefault();
-    let categoria=selectCategoria.value
-    let producto=textProducto.value
- 
-    fetch(uriProducto+'?categoria='+categoria+'&nombre='+producto)
-    .then(response=>response.json())
-    .then(data=>llenartabla(data))
-  
-}
+
+
 
 const llenartabla=(data)=>
 {  
@@ -51,7 +43,7 @@ const llenartabla=(data)=>
     })
     contenidoTabla.innerHTML=contenido  
 }
-
+//
 const eliminarProducto=(event)=>
 {   event.preventDefault();
     if(event.target.className=="botoneliminar")
@@ -82,7 +74,29 @@ const eliminarProducto=(event)=>
     }
     
 }
+const buscarProducto=(event)=>
+{   event.preventDefault();
+    let categoria=selectCategoria.value
+    let producto=textProducto.value
+ 
+    fetch(uriProducto+'?categoria='+categoria+'&nombre='+producto)
+    .then(response=>response.json())
+    .then(data=>llenartabla(data))
+  
+}
+const editarProducto=(event)=>
+{event.preventDefault()
+   if(event.target.className=="botoneditar" )
+
+   {
+    let id =  event.target.value
+    window.localStorage.setItem("id",event.target.value)
+    window.location.href="../producto.html"
+   }
+
+}
 
 botonBuscar.addEventListener('click',buscarProducto);
 window.addEventListener('load',mostrarCategoria);
 body.addEventListener('click',eliminarProducto);
+body.addEventListener('click',editarProducto);

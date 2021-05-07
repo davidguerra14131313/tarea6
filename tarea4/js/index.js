@@ -13,7 +13,15 @@ let checkboxAcepto=document.querySelector('#checkboxAcepto');
 let botonGrabar= document.querySelector('#botonGrabar');
 let botonLimpiar =document.querySelector('#botonLimpiar')
 
-
+let codigo=textoCodigo.value
+let nombre=textoNombre.value
+let descripcion=textDescripcion.value
+let categoria=selectCategoria.value
+let ruc=textRuc.value
+let proveedor=textProveedor.value
+let precio=textPrecio.value
+let fecha=textFecha.value
+let id=0
 const uriProducto='https://disenoydesarrolloweb.azurewebsites.net/api/Producto';
 const uriCategoria='https://disenoydesarrolloweb.azurewebsites.net/api/Producto/Categorias';
 
@@ -30,11 +38,26 @@ const  mostrarCategoria=(event)=>
 
         })});      
 }
+//
+
+
+const  grabarProducto=(event)=>
+{event.preventDefault();
+    let id=window.localStorage.getItem("id")
+    if(id)
+    {
+        modificardatos(event)
+        
+    }
+    else
+    {
+        agregarproducto(event)
+    }
+}
+
 
 const agregarproducto=(event)=>
-{ 
-    event.preventDefault();
-    let codigo=textoCodigo.value
+{     let codigo=textoCodigo.value
     let nombre=textoNombre.value
     let descripcion=textDescripcion.value
     let categoria=selectCategoria.value
@@ -42,6 +65,7 @@ const agregarproducto=(event)=>
     let proveedor=textProveedor.value
     let precio=textPrecio.value;
     let fecha=textFecha.value
+    event.preventDefault();
 
     let producto={"codigo":codigo,"nombre":nombre,"descripcion":descripcion,"ruc":ruc,"proveedor":proveedor,"precio":precio,"fechaIngreso":fecha,"categoria":categoria,"esActivo":true}
     
@@ -57,11 +81,56 @@ const agregarproducto=(event)=>
        
           alert("se envio datos ")
         )
-    .catch(
-        alert("se envio datos ")
-    )
+    
 
 }
+const modificardatos=(event)=>
+{
+    let codigo=textoCodigo.value
+    let nombre=textoNombre.value
+    let descripcion=textDescripcion.value
+    let categoria=selectCategoria.value
+    let ruc=textRuc.value
+    let proveedor=textProveedor.value   
+    let precio=textPrecio.value;
+    let fecha=textFecha.value
+        
+    let objetoProducto={"codigo":codigo,"nombre":nombre,"descripcion":descripcion,"precio":precio,"ruc":ruc,"proveedor":proveedor,"categoria":categoria,"fechaIngreso":textFecha.value,"esActivo":true}
+    let id=window.localStorage.getItem('id');
+    fetch((uriProducto+"/"+id),
+    {
+        method:"PUT",
+        body:JSON.stringify(objetoProducto),
+        headers:
+        {
+            "Content-Type":"application/json"
+        }
+    })
+    .then(response=>response.json())
+    .then(data=> 
+        alert("producto modificado"))
+}
 
+const obtenerProducto=(event)=>
+{event.preventDefault();
+
+   let id=window.localStorage.getItem('id');
+
+    fetch(uriProducto+"/"+id)
+    .then(response=>response.json())
+    .then(data=> 
+        {
+            textoCodigo.value=data.codigo;
+            textoNombre.value=data.nombre;
+            textDescripcion.value=data.descripcion;
+            selectCategoria.value=data.categoria;
+            textRuc.value=data.ruc;
+            textProveedor.value=data.proveedor;
+            textPrecio.value=data.precio;
+            textFecha.value=data.fechaIngreso;
+    } )
+}
+window.addEventListener('load',obtenerProducto);
 window.addEventListener('load',mostrarCategoria);
-botonGrabar.addEventListener('click',agregarproducto);
+
+botonGrabar.addEventListener('click',grabarProducto);

@@ -49,7 +49,21 @@ nav
 {
     background: gray;
 }
+.button.is-success
+{
 
+margin-right: 20px;
+margin-left: 20px;
+width: 150px;
+display: inline-block;
+box-sizing: content-box;
+}
+
+#botonvalidar
+{
+
+    width: 120px;
+}
 
 ul
 {

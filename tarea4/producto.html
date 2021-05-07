@@ -26,7 +26,7 @@
               <span id="span1">
                 <input class="input is-success" class="codigo" id="textoCodigo"type="tel" id="código" placeholder="Solo números" maxlength="6" pattern="[0-9]{6}" title="Debes ingresar 6 números" required>
                 <br></br>
-                <button type="submit" id=validar value="Validar" class="buttonValidar">Validar</button>
+                <button type="submit" id=validar value="Validar" id="botonvalidar" class="button is-primary">Validar</button>
               </span>
             </div>
           </div>
@@ -65,7 +65,7 @@
    
           <label class="label"for="precio">Precio*</label>
             <div class="control " >
-              <input class="input is-success" type="number"class="precio" id="textoPrecio" step="0.01" title="Solo números decimales con 2 dígitos" required>
+              <input class="input is-success" type="tel"class="precio" id="textoPrecio" step="0.01" title="Solo números decimales con 2 dígitos" required>
             </div>
           <label class="label"for="fecha">Fecha </label>
           <input class="input is-success"type="date" class="fecha"id="textoFecha" required>
@@ -102,10 +102,10 @@
             <textarea class="textarea is-success" placeholder="escribe fast o te decuento" class="descripción"id="textoDescripcion"></textarea>
             </div>
             <br></br>
-
-            <button class="button is-white" id="botonGrabar">Grabar</button>
-            <button class="button is-white" id="botonLimpiar">Limpiar</button>
-           
+          <center>
+            <button class="button is-success" id="botonGrabar">Grabar</button>
+            <button class="button is-success" id="botonLimpiar">Limpiar</button>
+          </center>
           </div>
           
 
@@ -113,6 +113,6 @@
          </div>
     </main>
     <script src="./js/index.js"></script>
-    
+    <script src="./js/frameLista.js"></script>
   </body>   
   </html>
