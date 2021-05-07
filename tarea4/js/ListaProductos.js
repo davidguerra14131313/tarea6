@@ -22,9 +22,6 @@ const mostrarCategoria=(event)=>
         });
 }
 
-
-
-
 const llenartabla=(data)=>
 {  
     let contenido=''
@@ -43,7 +40,7 @@ const llenartabla=(data)=>
     })
     contenidoTabla.innerHTML=contenido  
 }
-//
+
 const eliminarProducto=(event)=>
 {   event.preventDefault();
     if(event.target.className=="botoneliminar")
@@ -89,7 +86,6 @@ const editarProducto=(event)=>
    if(event.target.className=="botoneditar" )
 
    {
-    let id =  event.target.value
     window.localStorage.setItem("id",event.target.value)
     window.location.href="../producto.html"
    }

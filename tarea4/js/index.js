@@ -44,46 +44,21 @@ const  mostrarCategoria=(event)=>
 const  grabarProducto=(event)=>
 {event.preventDefault();
     let id=window.localStorage.getItem("id")
-    if(id)
-    {
-        modificardatos(event)
-        
-    }
-    else
+    if(id==0)
     {
         agregarproducto(event)
-    }
-}
-
-
-const agregarproducto=(event)=>
-{     let codigo=textoCodigo.value
-    let nombre=textoNombre.value
-    let descripcion=textDescripcion.value
-    let categoria=selectCategoria.value
-    let ruc=textRuc.value
-    let proveedor=textProveedor.value
-    let precio=textPrecio.value;
-    let fecha=textFecha.value
-    event.preventDefault();
-
-    let producto={"codigo":codigo,"nombre":nombre,"descripcion":descripcion,"ruc":ruc,"proveedor":proveedor,"precio":precio,"fechaIngreso":fecha,"categoria":categoria,"esActivo":true}
-    
-    fetch(uriProducto,
-    {
-        method: 'POST',
-        headers:{ 'Content-Type':'application/json'},
-        body:  JSON.stringify(producto),
-
-    })
-    .then(response=>response.json())
-    .then(
+        
        
-          alert("se envio datos ")
-        )
-    
-
+    }
+    else
+        {
+            modificardatos(event)
+      
+        }
+   
 }
+
+
 const modificardatos=(event)=>
 {
     let codigo=textoCodigo.value
@@ -92,10 +67,10 @@ const modificardatos=(event)=>
     let categoria=selectCategoria.value
     let ruc=textRuc.value
     let proveedor=textProveedor.value   
-    let precio=textPrecio.value;
+    let precio=textPrecio.value
     let fecha=textFecha.value
         
-    let objetoProducto={"codigo":codigo,"nombre":nombre,"descripcion":descripcion,"precio":precio,"ruc":ruc,"proveedor":proveedor,"categoria":categoria,"fechaIngreso":textFecha.value,"esActivo":true}
+    let objetoProducto={"codigo":codigo,"nombre":nombre,"descripcion":descripcion,"precio":precio,"ruc":ruc,"proveedor":proveedor,"categoria":categoria,"fechaIngreso":fecha,"esActivo":true}
     let id=window.localStorage.getItem('id');
     fetch((uriProducto+"/"+id),
     {
@@ -107,10 +82,39 @@ const modificardatos=(event)=>
         }
     })
     .then(response=>response.json())
-    .then(data=> 
-        alert("producto modificado"))
+    .then(data=>
+        {
+            alert("producto modificado exitosamente")
+        })
+   
 }
+const agregarproducto=(event)=>
+{  
+    let codigo=textoCodigo.value
+    let nombre=textoNombre.value
+    let descripcion=textDescripcion.value
+    let categoria=selectCategoria.value
+    let ruc=textRuc.value
+    let proveedor=textProveedor.value
+    let precio=textPrecio.value
+    let fecha=textFecha.value
+    
+    let producto={"codigo":codigo,"nombre":nombre,"descripcion":descripcion,"ruc":ruc,"proveedor":proveedor,"precio":precio,"fechaIngreso":fecha,"categoria":categoria,"esActivo":true}
+    
+    fetch((uriProducto),
+    {
+        method: "POST",
+        body:  JSON.stringify(producto),
+        headers:{"Content-Type":"application/json"}
+    })
+    .then(response=>response.json())
+    .then(data=>
+        {
+            alert("producto agregado satisfactoriamente")
+        })
+    
 
+}
 const obtenerProducto=(event)=>
 {event.preventDefault();
 

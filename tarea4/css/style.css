@@ -65,10 +65,6 @@ box-sizing: content-box;
     width: 120px;
 }
 
-ul
-{
-
-}
 li{
     list-style-type: none;
     
@@ -80,11 +76,7 @@ nav .column.is-12-mobile.is-2-desktop button:hover
   color: white;
    
 }
-main section
-{
-  
-    
-}
+
 main form
 {
 opacity: 80%;
@@ -104,10 +96,6 @@ main
     background-color: rgb(54, 212, 54);
 }
 
-section
-{
-   
-}
 nav .column.is-12-mobile.is-2-desktop
 {
    flex: auto;
@@ -168,8 +156,6 @@ nav .column.is-4 input
 {
  min-width: 30px;
  border-radius: 10px ;
-
- 
 }
 nav .column.is-4 label
 {
